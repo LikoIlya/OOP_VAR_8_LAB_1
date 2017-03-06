@@ -1,12 +1,12 @@
 #pragma once
+#include <iostream>
+#include <string>
+
 /*
 	Тип "Постачальник" визначити як клас, що містить:
 		- реалізоване у вигляді символьного рядка довільної довжини закриті поля з назвою фірми, країною реєстрації та контактним телефоном
 		- усі функціі реалізувати відповідно загальним вимогам.
  */
-#include <iostream>
-#include <string>
-
 class Provider
 {
 private:
@@ -18,7 +18,7 @@ public:
 	Provider(std::string CompanyName);
 	Provider(std::string CompanyName, std::string RegistrationCountry);
 	Provider(std::string CompanyName, std::string RegistrationCountry, std::string Phone);
-	Provider(const Provider &);
+	Provider(const Provider &src);
 	~Provider();
 	std::string GetName() { return _name_of_company; }
 	std::string GetCountry() { return _country_of_registration; }

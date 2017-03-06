@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include <string>
 #include "Provider.h"
 
@@ -20,7 +21,7 @@ public:
 	Goods(std::string GoodsName, int Price);
 	Goods(std::string GoodsName, int Price, int Count);
 	Goods(std::string GoodsName, int Price, int Count, Provider GoodsProvider);
-	Goods(const Goods &);
+	Goods(const Goods &src);
 	~Goods();
 	std::string GetName() { return _name_of_goods; }
 	int GetPrice() { return _price_of_goods; }

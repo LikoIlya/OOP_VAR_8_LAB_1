@@ -34,7 +34,7 @@ Provider::~Provider()
 
 void Provider::Put()
 {
-	std::cout << "IM" << _name_of_company << "MI" << std::endl;
+	std::cout << "" << _name_of_company << "" << std::endl;
 }
 
 void Provider::PutFull()

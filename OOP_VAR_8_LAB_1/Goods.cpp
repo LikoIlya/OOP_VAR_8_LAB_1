@@ -35,7 +35,7 @@ Goods::~Goods()
 
 void Goods::Put()
 {
-	std::cout << "IM" << _name_of_goods << "MI" << std::endl;
+	std::cout << "" << _name_of_goods << "" << std::endl;
 }
 
 void Goods::PutFull()
