@@ -8,7 +8,7 @@ Goods::Goods(const Goods &src)
 	_provider = src._provider;
 }
 
-Goods::Goods() : Goods("")
+Goods::Goods() : Goods("StdName")
 {}
 
 Goods::Goods(std::string GoodsName) : Goods(GoodsName, 0)
@@ -41,6 +41,11 @@ void Goods::Put()
 void Goods::PutFull()
 {
 	std::cout <<"Goods: "<< _name_of_goods << " Price: " << _price_of_goods << " Count: " << _count << " Provider: " << _provider.GetName() << std::endl;
+}
+
+std::string Goods::alarm()
+{
+	return _name_of_goods;
 }
 
 Goods & Goods::SetName(std::string GoodsName)

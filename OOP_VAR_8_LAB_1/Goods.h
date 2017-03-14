@@ -10,7 +10,7 @@
 */
 class Goods
 {
-private:
+protected:
 	std::string _name_of_goods;
 	int _price_of_goods;
 	int _count;
@@ -38,6 +38,6 @@ public:
 	//Methods
 	void Put();
 	void PutFull();
-	
+	std::string alarm();
 };
 

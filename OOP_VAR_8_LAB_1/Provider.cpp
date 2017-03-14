@@ -1,13 +1,13 @@
 #include "Provider.h"
 
 
-Provider::Provider() : Provider("")
+Provider::Provider() : Provider("StdCompany")
 {}
 
-Provider::Provider(std::string CompanyName) : Provider(CompanyName, "")
+Provider::Provider(std::string CompanyName) : Provider(CompanyName, "StdCountry")
 {}
 
-Provider::Provider(std::string CompanyName, std::string RegistrationCountry) : Provider(CompanyName, RegistrationCountry, "")
+Provider::Provider(std::string CompanyName, std::string RegistrationCountry) : Provider(CompanyName, RegistrationCountry, "StdPhone")
 {}
 
 Provider::Provider(std::string CompanyName, std::string RegistrationCountry, std::string Phone)
@@ -34,7 +34,7 @@ Provider::~Provider()
 
 void Provider::Put()
 {
-	std::cout << "" << _name_of_company << "" << std::endl;
+	std::cout << "<Provider>" << _name_of_company << "" << std::endl;
 }
 
 void Provider::PutFull()
