@@ -1,6 +1,6 @@
 #include "Food.h"
 
-Food::Food() : Food(0)
+Food::Food() : Food(0, 0, 0)
 {
 }
 
