@@ -29,7 +29,7 @@ IndustrialGoods::IndustrialGoods(int Conditions, int plc) : Goods(), _conditions
 IndustrialGoods::IndustrialGoods
 (
 	std::string GoodsName
-) : IndustrialGoods(GoodsName, 0)
+) : IndustrialGoods(GoodsName, 0.0)
 {
 }
 

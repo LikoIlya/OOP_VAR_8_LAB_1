@@ -129,5 +129,5 @@ time_t Food::makeDate(int day, int month, int year)
 
 std::string Food::alarm()
 {
-	return _prodDate + _expirationDate >= time(0) ? "Товар придатний до своживання" : "Товар не придатний до споживання";
+	return _prodDate + _expirationDate >= time(0) ? "Goods suitable for consumption" : "Goods unfit for consumption";
 }
