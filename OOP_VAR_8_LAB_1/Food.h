@@ -16,11 +16,11 @@ public:
 	Food(int day, int month, int year);
 	Food(int day, int month, int year, int days);
 	Food(std::string GoodsName);
-	Food(std::string GoodsName, int Price);
-	Food(std::string GoodsName, int Price, int Count);
-	Food(std::string GoodsName, int Price, int Count, Provider GoodsProvider);
-	Food(std::string GoodsName, int Price, int Count, Provider GoodsProvider, int day, int month, int year);
-	Food(std::string GoodsName, int Price, int Count, Provider GoodsProvider, int day, int month, int year, int days);
+	Food(std::string GoodsName, double Price);
+	Food(std::string GoodsName, double Price, int Count);
+	Food(std::string GoodsName, double Price, int Count, Provider GoodsProvider);
+	Food(std::string GoodsName, double Price, int Count, Provider GoodsProvider, int day, int month, int year);
+	Food(std::string GoodsName, double Price, int Count, Provider GoodsProvider, int day, int month, int year, int days);
 	Food(const Food& src);
 	~Food();
 	Food& SetProdDate(int day, int month, int year);

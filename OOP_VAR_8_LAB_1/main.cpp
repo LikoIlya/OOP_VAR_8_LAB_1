@@ -34,7 +34,8 @@ int main()
 	Goods good = Goods();
 	good.Put();
 	good.PutFull();
-	int k, m;
+	int m;
+	double k;
 	getline(cin, a);
 	cin >> k >> m;
 	Goods g(a, k, m, prov);

@@ -38,7 +38,7 @@ Food::Food
 Food::Food
 (
 	std::string GoodsName,
-	int Price
+	double Price
 ) : Food(GoodsName, Price, 0)
 {
 }
@@ -46,7 +46,7 @@ Food::Food
 Food::Food
 (
 	std::string GoodsName,
-	int Price,
+	double Price,
 	int Count
 ) : Food(GoodsName, Price, Count, Provider())
 {
@@ -55,7 +55,7 @@ Food::Food
 Food::Food
 (
 	std::string GoodsName,
-	int Price,
+	double Price,
 	int Count,
 	Provider GoodsProvider
 ) : Food(GoodsName, Price, Count, GoodsProvider, 0, 0, 0)
@@ -65,7 +65,7 @@ Food::Food
 Food::Food
 (
 	std::string GoodsName,
-	int Price,
+	double Price,
 	int Count,
 	Provider GoodsProvider,
 	int day,
@@ -78,7 +78,7 @@ Food::Food
 Food::Food
 (
 	std::string GoodsName,
-	int Price,
+	double Price,
 	int Count,
 	Provider GoodsProvider,
 	int day, int month, int year, int days

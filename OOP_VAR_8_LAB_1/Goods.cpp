@@ -16,15 +16,15 @@ Goods::Goods(std::string GoodsName) : Goods(GoodsName, 0)
 {
 }
 
-Goods::Goods(std::string GoodsName, int Price) : Goods(GoodsName, 0, 0)
+Goods::Goods(std::string GoodsName, double Price) : Goods(GoodsName, 0, 0)
 {
 }
 
-Goods::Goods(std::string GoodsName, int Price, int Count) : Goods(GoodsName, 0, 0, Provider())
+Goods::Goods(std::string GoodsName, double Price, int Count) : Goods(GoodsName, 0, 0, Provider())
 {
 }
 
-Goods::Goods(std::string GoodsName, int Price, int Count, Provider GoodsProvider)
+Goods::Goods(std::string GoodsName, double Price, int Count, Provider GoodsProvider)
 {
 	_name_of_goods = GoodsName;
 	_price_of_goods = Price;
@@ -58,7 +58,7 @@ Goods& Goods::SetName(std::string GoodsName)
 	return *this;
 }
 
-Goods& Goods::SetPrice(int Price)
+Goods& Goods::SetPrice(double Price)
 {
 	_price_of_goods = Price;
 	return *this;

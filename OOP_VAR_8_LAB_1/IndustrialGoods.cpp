@@ -36,7 +36,7 @@ IndustrialGoods::IndustrialGoods
 IndustrialGoods::IndustrialGoods
 (
 	std::string GoodsName,
-	int Price
+	double Price
 ) : IndustrialGoods(GoodsName, Price, 0)
 {
 }
@@ -44,7 +44,7 @@ IndustrialGoods::IndustrialGoods
 IndustrialGoods::IndustrialGoods
 (
 	std::string GoodsName,
-	int Price,
+	double Price,
 	int Count
 ) : IndustrialGoods(GoodsName, Price, Count, Provider())
 {
@@ -53,7 +53,7 @@ IndustrialGoods::IndustrialGoods
 IndustrialGoods::IndustrialGoods
 (
 	std::string GoodsName,
-	int Price,
+	double Price,
 	int Count,
 	Provider GoodsProvider
 ) : IndustrialGoods(GoodsName, Price, Count, GoodsProvider, 0)
@@ -63,7 +63,7 @@ IndustrialGoods::IndustrialGoods
 IndustrialGoods::IndustrialGoods
 (
 	std::string GoodsName,
-	int Price,
+	double Price,
 	int Count,
 	Provider GoodsProvider,
 	int Conditions
@@ -74,7 +74,7 @@ IndustrialGoods::IndustrialGoods
 IndustrialGoods::IndustrialGoods
 (
 	std::string GoodsName,
-	int Price,
+	double Price,
 	int Count,
 	Provider GoodsProvider,
 	int Conditions,

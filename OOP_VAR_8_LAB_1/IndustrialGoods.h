@@ -24,11 +24,11 @@ public:
 	IndustrialGoods(int Conditions);
 	IndustrialGoods(int Conditions, int Place);
 	IndustrialGoods(std::string GoodsName);
-	IndustrialGoods(std::string GoodsName, int Price);
-	IndustrialGoods(std::string GoodsName, int Price, int Count);
-	IndustrialGoods(std::string GoodsName, int Price, int Count, Provider GoodsProvider);
-	IndustrialGoods(std::string GoodsName, int Price, int Count, Provider GoodsProvider, int Conditions);
-	IndustrialGoods(std::string GoodsName, int Price, int Count, Provider GoodsProvider, int Conditions, int Place);
+	IndustrialGoods(std::string GoodsName, double Price);
+	IndustrialGoods(std::string GoodsName, double Price, int Count);
+	IndustrialGoods(std::string GoodsName, double Price, int Count, Provider GoodsProvider);
+	IndustrialGoods(std::string GoodsName, double Price, int Count, Provider GoodsProvider, int Conditions);
+	IndustrialGoods(std::string GoodsName, double Price, int Count, Provider GoodsProvider, int Conditions, int Place);
 	IndustrialGoods(const IndustrialGoods& src);
 	~IndustrialGoods();
 	IndustrialGoods& SetConditions(int Conditions);
