@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #pragma once
 #include "Goods.h"
 #include <map>
@@ -17,6 +18,9 @@ private:
 
 public:
 	IndustrialGoods();
+	IndustrialGoods(Goods Good);
+	IndustrialGoods(Goods Good, int Conditions);
+	IndustrialGoods(Goods Good, int Conditions, int Place);
 	IndustrialGoods(int Conditions);
 	IndustrialGoods(int Conditions, int Place);
 	IndustrialGoods(std::string GoodsName);

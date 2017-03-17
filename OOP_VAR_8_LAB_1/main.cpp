@@ -12,11 +12,15 @@
 #include "Provider.h"
 #include "Goods.h"
 #include "Food.h"
+#include "IndustrialGoods.h"
+#include<windows.h>
 
 using namespace std;
 
 int main()
 {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 	Provider p = Provider();
 	p.Put();
 	p.PutFull();
@@ -36,5 +40,10 @@ int main()
 	Goods g(a, k, m, prov);
 	g.Put();
 	g.PutFull();
+	cout << g.alarm() << endl;
+	IndustrialGoods ID(g, 2, 0);
+	cout << ID.alarm() << endl;
+	Food foo(g, 10, 3, 2017, 3);
+	cout << foo.alarm() << endl;
 	system("pause");
 }

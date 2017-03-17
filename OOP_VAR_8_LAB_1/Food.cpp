@@ -4,28 +4,28 @@ Food::Food() : Food(0)
 {
 }
 
-Food::Food(Goods Good) : Food(Good, 0)
+Food::Food(Goods Good) : Food(Good, 0, 0, 0)
 {
 }
 
-Food::Food(Goods Good, time_t Produced) : Food(Good, Produced, 0)
+Food::Food(Goods Good, int day, int month, int year) : Food(Good, day, month, year, 0)
 {
 }
 
-Food::Food(Goods Good, time_t Produced, time_t Expired) : Goods(Good)
+Food::Food(Goods Good, int day, int month, int year, int days) : Goods(Good)
 {
-	_expirationDate = Expired;
-	_prodDate = Produced;
+	_expirationDate = 60 * 60 * 24 * days;
+	_prodDate = makeDate(day, month, year);
 }
 
-Food::Food(time_t Prodused) : Food(Prodused, 0)
+Food::Food(int day, int month, int year) : Food(day,month,year, 0)
 {
 }
 
-Food::Food(time_t Prodused, time_t Expired) : Goods()
+Food::Food(int day, int month, int year, int days) : Goods()
 {
-	_prodDate = Prodused;
-	_expirationDate = Expired;
+	_expirationDate = 60 * 60 * 24 * days;
+	_prodDate = makeDate(day, month, year);
 }
 
 Food::Food
@@ -58,7 +58,7 @@ Food::Food
 	int Price,
 	int Count,
 	Provider GoodsProvider
-) : Food(GoodsName, Price, Count, GoodsProvider, 0)
+) : Food(GoodsName, Price, Count, GoodsProvider, 0, 0, 0)
 {
 }
 
@@ -68,8 +68,10 @@ Food::Food
 	int Price,
 	int Count,
 	Provider GoodsProvider,
-	time_t Prodused
-) : Food(GoodsName, Price, Count, GoodsProvider, Prodused, 0)
+	int day,
+	int month,
+	int year
+) : Food(GoodsName, Price, Count, GoodsProvider, day, month, year, 0)
 {
 }
 
@@ -79,12 +81,11 @@ Food::Food
 	int Price,
 	int Count,
 	Provider GoodsProvider,
-	time_t Prodused,
-	time_t Expired
+	int day, int month, int year, int days
 ) : Goods(GoodsName, Price, Count, GoodsProvider)
 {
-	_prodDate = Prodused;
-	_expirationDate = 60 * 60 * 24 * Expired;
+	_expirationDate = 60 * 60 * 24 * days;
+	_prodDate = makeDate(day, month, year);
 }
 
 Food::Food(const Food& src)
@@ -101,16 +102,29 @@ Food::~Food()
 {
 }
 
-Food& Food::SetProdDate(time_t Prodused)
+Food& Food::SetProdDate(int day, int month, int year)
 {
-	_prodDate = Prodused;
+	
+	_prodDate = makeDate(day, month, year);
 	return *this;
 }
 
-Food& Food::SetExpireDate(time_t Expired)
+Food& Food::SetExpireDate(int days)
 {
-	_expirationDate = Expired;
+	//std::cout << "Set expire time in days:" << std::endl;
+	_expirationDate = 60 * 60 * 24 * days;
 	return *this;
+}
+
+time_t Food::makeDate(int day, int month, int year)
+{
+	time_t now;
+	time(&now);
+	struct tm *timeinfo = localtime(&now);
+	timeinfo->tm_year = year - 1900;
+	timeinfo->tm_mon = month - 1;
+	timeinfo->tm_mday = day;
+	return mktime(timeinfo);
 }
 
 std::string Food::alarm()

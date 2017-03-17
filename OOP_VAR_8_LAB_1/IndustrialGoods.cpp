@@ -4,6 +4,20 @@ IndustrialGoods::IndustrialGoods() : IndustrialGoods(0)
 {
 }
 
+IndustrialGoods::IndustrialGoods(Goods Good) : IndustrialGoods(Good, 0)
+{
+}
+
+IndustrialGoods::IndustrialGoods(Goods Good, int Conditions) : IndustrialGoods(Good, Conditions, 0)
+{
+}
+
+IndustrialGoods::IndustrialGoods(Goods Good, int Conditions, int Place) : Goods(Good)
+{
+	_conditions = Conditions;
+	_place = Place;
+}
+
 IndustrialGoods::IndustrialGoods(int Conditions) : IndustrialGoods(Conditions, 0)
 {
 }
@@ -87,6 +101,7 @@ IndustrialGoods::~IndustrialGoods()
 
 IndustrialGoods& IndustrialGoods::SetConditions(int Conditions)
 {
+	//std::cout << "Set Conditions:\n0."<<_cond[0]<<std::endl<< "1." << _cond[1] << std::endl << "2." << _cond[2] << std::endl << "3." << _cond[3] << std::endl << "4." << _cond[4] << std::endl;
 	if (Conditions < 0)
 		Conditions = 0;
 	if (Conditions > 4)
@@ -97,6 +112,7 @@ IndustrialGoods& IndustrialGoods::SetConditions(int Conditions)
 
 IndustrialGoods& IndustrialGoods::SetPlace(int Place)
 {
+	//std::cout << "Set Place:\n0." << _plc[0] << std::endl << "1." << _plc[1] << std::endl << "2." << _plc[2] << std::endl;
 	if (Place < 0)
 		Place = 0;
 	if (Place > 2)

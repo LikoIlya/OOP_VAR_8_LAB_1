@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #pragma once
 #include "Goods.h"
 #include <ctime>
@@ -10,20 +11,21 @@ class Food :
 public:
 	Food();
 	Food(Goods Good);
-	Food(Goods Good, time_t Prodused);
-	Food(Goods Good, time_t Prodused, time_t Expired);
-	Food(time_t Prodused);
-	Food(time_t Prodused, time_t Expired);
+	Food(Goods Good, int day, int month, int year);
+	Food(Goods Good, int day, int month, int year, int days);
+	Food(int day, int month, int year);
+	Food(int day, int month, int year, int days);
 	Food(std::string GoodsName);
 	Food(std::string GoodsName, int Price);
 	Food(std::string GoodsName, int Price, int Count);
 	Food(std::string GoodsName, int Price, int Count, Provider GoodsProvider);
-	Food(std::string GoodsName, int Price, int Count, Provider GoodsProvider, time_t Prodused);
-	Food(std::string GoodsName, int Price, int Count, Provider GoodsProvider, time_t Prodused, time_t Expired);
+	Food(std::string GoodsName, int Price, int Count, Provider GoodsProvider, int day, int month, int year);
+	Food(std::string GoodsName, int Price, int Count, Provider GoodsProvider, int day, int month, int year, int days);
 	Food(const Food& src);
 	~Food();
-	Food& SetProdDate(time_t Prodused);
-	Food& SetExpireDate(time_t Expired);
+	Food& SetProdDate(int day, int month, int year);
+	Food& SetExpireDate(int days);
+	time_t makeDate(int  day, int month, int year);
 	time_t GetProdDate() { return _prodDate; }
 	time_t GetExpDate() { return _expirationDate; }
 	std::string alarm();
