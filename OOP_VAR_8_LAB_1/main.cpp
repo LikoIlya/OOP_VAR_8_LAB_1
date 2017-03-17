@@ -11,6 +11,7 @@
   */
 #include "Provider.h"
 #include "Goods.h"
+#include "Food.h"
 
 using namespace std;
 
@@ -32,7 +33,7 @@ int main()
 	int k, m;
 	getline(cin, a);
 	cin >> k >> m;
-	Goods g = Goods(a, k, m, prov);
+	Goods g(a, k, m, prov);
 	g.Put();
 	g.PutFull();
 	system("pause");

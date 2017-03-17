@@ -19,7 +19,7 @@ public:
 	Provider(std::string CompanyName);
 	Provider(std::string CompanyName, std::string RegistrationCountry);
 	Provider(std::string CompanyName, std::string RegistrationCountry, std::string Phone);
-	Provider(const Provider &src);
+	Provider(const Provider& src);
 	//Destrucrtor
 	~Provider();
 	//Getters
@@ -34,4 +34,3 @@ public:
 	void Put();
 	void PutFull();
 };
-

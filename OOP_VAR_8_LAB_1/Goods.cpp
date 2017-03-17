@@ -1,6 +1,6 @@
 #include "Goods.h"
 
-Goods::Goods(const Goods &src)
+Goods::Goods(const Goods& src)
 {
 	_count = src._count;
 	_name_of_goods = src._name_of_goods;
@@ -9,16 +9,20 @@ Goods::Goods(const Goods &src)
 }
 
 Goods::Goods() : Goods("StdName")
-{}
+{
+}
 
 Goods::Goods(std::string GoodsName) : Goods(GoodsName, 0)
-{}
+{
+}
 
 Goods::Goods(std::string GoodsName, int Price) : Goods(GoodsName, 0, 0)
-{}
+{
+}
 
 Goods::Goods(std::string GoodsName, int Price, int Count) : Goods(GoodsName, 0, 0, Provider())
-{}
+{
+}
 
 Goods::Goods(std::string GoodsName, int Price, int Count, Provider GoodsProvider)
 {
@@ -40,7 +44,7 @@ void Goods::Put()
 
 void Goods::PutFull()
 {
-	std::cout <<"Goods: "<< _name_of_goods << " Price: " << _price_of_goods << " Count: " << _count << " Provider: " << _provider.GetName() << std::endl;
+	std::cout << "Goods: " << _name_of_goods << " Price: " << _price_of_goods << " Count: " << _count << " Provider: " << _provider.GetName() << std::endl;
 }
 
 std::string Goods::alarm()
@@ -48,25 +52,25 @@ std::string Goods::alarm()
 	return _name_of_goods;
 }
 
-Goods & Goods::SetName(std::string GoodsName)
+Goods& Goods::SetName(std::string GoodsName)
 {
 	_name_of_goods = GoodsName;
 	return *this;
 }
 
-Goods & Goods::SetPrice(int Price)
+Goods& Goods::SetPrice(int Price)
 {
 	_price_of_goods = Price;
 	return *this;
 }
 
-Goods & Goods::SetCount(int Count)
+Goods& Goods::SetCount(int Count)
 {
 	_count = Count;
 	return *this;
 }
 
-Goods & Goods::SetProvider(Provider GoodsProvider)
+Goods& Goods::SetProvider(Provider GoodsProvider)
 {
 	_provider = GoodsProvider;
 	return *this;

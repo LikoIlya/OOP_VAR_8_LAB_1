@@ -22,7 +22,7 @@ public:
 	Goods(std::string GoodsName, int Price);
 	Goods(std::string GoodsName, int Price, int Count);
 	Goods(std::string GoodsName, int Price, int Count, Provider GoodsProvider);
-	Goods(const Goods &src);
+	Goods(const Goods& src);
 	//Destrucrtor
 	~Goods();
 	//Getters
@@ -40,4 +40,3 @@ public:
 	void PutFull();
 	std::string alarm();
 };
-
