@@ -29,10 +29,11 @@ int main()
 	Goods good = Goods();
 	good.Put();
 	good.PutFull();
-	int k, m;
+	int k;
+	double m;
 	getline(cin, a);
-	cin >> k >> m;
-	Goods g = Goods(a, k, m, prov);
+	cin >> m >> k;
+	Goods g = Goods(a, m, k, prov);
 	g.Put();
 	g.PutFull();
 	system("pause");
