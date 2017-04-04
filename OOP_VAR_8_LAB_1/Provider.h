@@ -10,7 +10,7 @@
  */
 class Provider
 {
-private:
+protected:
 	std::string _name_of_company;
 	std::string _country_of_registration;
 	std::string _phone_number;
@@ -34,4 +34,7 @@ public:
 	//Methods
 	void Put();
 	void PutFull();
+	bool Equals(const Provider & prov);
+	friend std::ostream & operator << (std::ostream &, Provider);
+	friend std::istream & operator >> (std::istream &, Provider&);
 };

@@ -34,6 +34,7 @@ int main()
 	Goods good = Goods();
 	good.Put();
 	good.PutFull();
+	good.SetCount(15);
 	int m;
 	double k;
 	getline(cin, a);
@@ -41,6 +42,7 @@ int main()
 	Goods g(a, k, m, prov);
 	g.Put();
 	g.PutFull();
+	good = good + g;
 	cout << g.alarm() << endl;
 	IndustrialGoods ID(g, 2, 0);
 	cout << ID.alarm() << endl;

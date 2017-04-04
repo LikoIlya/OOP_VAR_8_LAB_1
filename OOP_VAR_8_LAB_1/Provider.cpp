@@ -44,6 +44,17 @@ void Provider::PutFull()
 	std::cout << "Name: " << _name_of_company << " Country: " << _country_of_registration << " Phone: " << _phone_number << std::endl;
 }
 
+bool Provider::Equals(const Provider& prov)
+{
+	if (
+		_name_of_company == prov._name_of_company &&
+		_country_of_registration == prov._country_of_registration &&
+		_phone_number == prov._phone_number
+		)
+		return true;
+	return false;
+}
+
 Provider& Provider::SetName(std::string CompanyName)
 {
 	_name_of_company = CompanyName;
@@ -60,4 +71,20 @@ Provider& Provider::SetPhone(std::string Phone)
 {
 	_phone_number = Phone;
 	return *this;
+}
+
+std::ostream & operator << (std::ostream & o, Provider src)
+{
+	return o << "<Provider>"
+		<< "\nName: " << src._name_of_company
+		<< "\nCountry: " << src._country_of_registration
+		<< "\nPhone: " << src._phone_number
+		<< std::endl;
+}
+std::istream & operator >> (std::istream & o, Provider &src)
+{
+	getline(o, src._name_of_company);
+	getline(o, src._country_of_registration);
+	getline(o, src._phone_number);
+	return o;
 }
