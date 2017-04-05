@@ -34,7 +34,8 @@ public:
 	//Methods
 	void Put();
 	void PutFull();
-	bool Equals(const Provider & prov);
+	bool	operator == (Provider& sec),
+			Equals(const Provider & prov);
 	friend std::ostream & operator << (std::ostream &, Provider);
 	friend std::istream & operator >> (std::istream &, Provider&);
 };

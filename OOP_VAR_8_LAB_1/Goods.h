@@ -40,7 +40,8 @@ public:
 			PutFull();
 	std::string alarm();
 	Goods	&operator + (Goods& sec),
-			&operator ++ ();
+			&operator ++ (),
+			&operator = (const Goods& src);
 	bool	operator == (Goods& sec), 
 			Equals(const Goods& sec);
 };

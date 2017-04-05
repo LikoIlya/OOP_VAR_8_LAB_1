@@ -55,6 +55,11 @@ bool Provider::Equals(const Provider& prov)
 	return false;
 }
 
+bool Provider::operator==(Provider & sec)
+{
+	return this->Equals(sec);
+}
+
 Provider& Provider::SetName(std::string CompanyName)
 {
 	_name_of_company = CompanyName;
