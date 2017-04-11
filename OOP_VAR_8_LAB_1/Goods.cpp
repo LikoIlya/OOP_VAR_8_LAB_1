@@ -8,21 +8,13 @@ Goods::Goods(const Goods& src)
 	_provider = src._provider;
 }
 
-Goods::Goods() : Goods("StdName")
-{
-}
+Goods::Goods() : Goods("StdName"){}
 
-Goods::Goods(std::string GoodsName) : Goods(GoodsName, 0)
-{
-}
+Goods::Goods(std::string GoodsName) : Goods(GoodsName, 0){}
 
-Goods::Goods(std::string GoodsName, double Price) : Goods(GoodsName, Price, 0)
-{
-}
+Goods::Goods(std::string GoodsName, double Price) : Goods(GoodsName, Price, 0){}
 
-Goods::Goods(std::string GoodsName, double Price, int Count) : Goods(GoodsName, Price, Count, Provider())
-{
-}
+Goods::Goods(std::string GoodsName, double Price, int Count) : Goods(GoodsName, Price, Count, Provider()){}
 
 Goods::Goods(std::string GoodsName, double Price, int Count, Provider GoodsProvider)
 {
@@ -58,13 +50,13 @@ Goods & Goods::operator+(Goods & sec)
 	{
 		if (this->_name_of_goods != sec._name_of_goods)
 		{
-			throw new std::exception("Not the same goods", 300);
+			throw std::exception("Not the same goods");
 		}
 		this->_count += sec._count;
 	}
 	catch (std::exception err)
 	{
-		std::cout << err.what();
+		std::cerr << err.what() << std::endl;
 	}
 	return *this;
 }
@@ -83,6 +75,16 @@ bool Goods::operator==(Goods & sec)
 	return this->Equals(sec);
 }
 
+bool Goods::operator>(Goods & sec)
+{
+	return _price_of_goods > sec._price_of_goods;
+}
+
+bool Goods::operator<(Goods & sec)
+{
+	return _price_of_goods < sec._price_of_goods;
+}
+
 bool Goods::Equals(const Goods& sec)
 {
 	if (
@@ -99,6 +101,13 @@ Goods & Goods::operator++()
 {
 	_count++;
 	return *this;
+}	
+
+Goods Goods::operator++(int)
+{
+	Goods temp = *this;
+	++*this;
+	return temp;
 }
 
 Goods& Goods::SetName(std::string GoodsName)

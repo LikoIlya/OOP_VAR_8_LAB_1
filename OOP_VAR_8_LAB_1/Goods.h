@@ -40,8 +40,11 @@ public:
 			PutFull();
 	std::string alarm();
 	Goods	&operator + (Goods& sec),
-			&operator ++ (),
+			operator ++ (int), //postfix
+			&operator ++ (), //prefix
 			&operator = (const Goods& src);
-	bool	operator == (Goods& sec), 
-			Equals(const Goods& sec);
+	bool	operator == (Goods& sec),
+			Equals(const Goods& sec),
+			operator<(Goods& sec),
+			operator>(Goods& sec);
 };
