@@ -44,7 +44,7 @@ std::string Goods::alarm()
 	return _name_of_goods;
 }
 
-Goods & Goods::operator+(Goods & sec)
+Goods Goods::operator+(Goods & sec)
 {
 	try
 	{
@@ -52,13 +52,15 @@ Goods & Goods::operator+(Goods & sec)
 		{
 			throw std::exception("Not the same goods");
 		}
-		this->_count += sec._count;
+		Goods temp = *this;
+		temp._count = this->_count + sec._count;
+		return temp;
 	}
 	catch (std::exception err)
 	{
 		std::cerr << err.what() << std::endl;
+		return *this;
 	}
-	return *this;
 }
 
 Goods & Goods::operator=(const Goods & src)

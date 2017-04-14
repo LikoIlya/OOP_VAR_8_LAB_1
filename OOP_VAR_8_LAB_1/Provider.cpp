@@ -44,6 +44,14 @@ void Provider::PutFull()
 	std::cout << "Name: " << _name_of_company << " Country: " << _country_of_registration << " Phone: " << _phone_number << std::endl;
 }
 
+Provider& Provider::operator=(const Provider& src)
+{
+	_name_of_company = src._name_of_company;
+	_country_of_registration = src._country_of_registration;
+	_phone_number = src._phone_number;
+	return *this;
+}
+
 bool Provider::Equals(const Provider& prov)
 {
 	if (

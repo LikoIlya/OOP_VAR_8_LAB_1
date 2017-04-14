@@ -39,7 +39,7 @@ public:
 	void	Put(),
 			PutFull();
 	std::string alarm();
-	Goods	&operator + (Goods& sec),
+	Goods	operator + (Goods& sec),
 			operator ++ (int), //postfix
 			&operator ++ (), //prefix
 			&operator = (const Goods& src);
