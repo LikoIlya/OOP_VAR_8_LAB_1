@@ -150,6 +150,7 @@
     <ClInclude Include="Goods.h" />
     <ClInclude Include="IndustrialGoods.h" />
     <ClInclude Include="Provider.h" />
+    <ClInclude Include="Warehouse.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Food.cpp" />
@@ -157,6 +158,7 @@
     <ClCompile Include="IndustrialGoods.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Provider.cpp" />
+    <ClCompile Include="Warehouse.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

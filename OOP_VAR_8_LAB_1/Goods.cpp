@@ -135,3 +135,7 @@ Goods& Goods::SetProvider(Provider GoodsProvider)
 	_provider = GoodsProvider;
 	return *this;
 }
+std::ostream & operator << (std::ostream & o, Goods src)
+{
+	return o << "<Goods>\nName: " << src._name_of_goods << "\nPrice: " << src._price_of_goods << "\nCount: " << src._count << "\nProvider: " << src._provider.GetName() << std::endl;
+}

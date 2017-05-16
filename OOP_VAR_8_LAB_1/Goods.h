@@ -47,4 +47,5 @@ public:
 			Equals(const Goods& sec),
 			operator<(Goods& sec),
 			operator>(Goods& sec);
+	friend std::ostream & operator << (std::ostream &, Goods);
 };

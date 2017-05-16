@@ -14,6 +14,7 @@
 #include "Food.h"
 #include "IndustrialGoods.h"
 #include<windows.h>
+#include "Warehouse.h"
 
 using namespace std;
 
@@ -21,6 +22,7 @@ int main()
 {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
+	Warehouse WR1(3), WR2(2);
 	Provider prov = Provider("Babki Industries", "Ukraine", "+380630000777");
 	cout << prov;
 	Goods g("Kampukter", 100500, 33333, prov);
@@ -39,6 +41,15 @@ int main()
 	Goods g2("NeKampukter", 100, 2, prov);
 	cout << "g2: ";
 	g2.PutFull();
+	Goods* ga = new Goods[3];
+	ga[0] = g;
+	ga[1] = g1;
+	ga[2] = g2;
+	Goods* gb = new Goods[2];
+	gb[0] = g2;
+	gb[1] = g1;
+	WR1.addGoods(ga, 3);
+	WR2.addGoods(gb, 2);
 	cout << "Equal plus (g+g1) ";
 	(g + g1).PutFull();
 	cout << "Not equal plus (g+g2) ";
@@ -47,5 +58,7 @@ int main()
 	cout << (g > g2) << endl;
 	cout << "g == g1 ";
 	cout << (g == g1) << endl;
+	cout << WR1 << endl;
+	cout << WR2 << endl;
 	system("pause");
 }
